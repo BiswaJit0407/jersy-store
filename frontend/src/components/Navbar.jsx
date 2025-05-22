@@ -40,12 +40,12 @@ const Navbar = () => {
       {/* Right Side Icons */}
       <div className='flex items-center gap-5'>
         {/* Search */}
-        <img
+        {/* <img
           onClick={() => setShowSearch(true)}
           src={assets.search_icon}
           className='w-5 h-5 cursor-pointer'
           alt='search'
-        />
+        /> */}
 
         {/* Profile */}
         <div className='relative group'>
