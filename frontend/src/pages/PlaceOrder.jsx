@@ -42,6 +42,13 @@ const PlaceOrder = () => {
 
   const onSubmitHandler = async (formData) => {
     try {
+
+
+        if (!token) {
+      toast.error("Please login to place an order.");
+      navigate('/login');
+      return;
+    }
       let orderItems = [];
 
       for (const productId in cartItems) {
@@ -56,7 +63,10 @@ const PlaceOrder = () => {
           }
         }
       }
-
+if (orderItems.length === 0) {
+      toast.error("Your cart is empty. Please add items before placing an order.");
+      return;
+    }
       let orderData = {
         address: formData,
         items: orderItems,
